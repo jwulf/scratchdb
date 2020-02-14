@@ -1,0 +1,20 @@
+name: Find record
+
+on: [repository_dispatch]
+
+jobs:
+  find:
+    if: github.event.action == 'find'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find record
+        id: find-operation
+        uses: jwulf/ghettohubDB@master
+        with:
+          operation: FINDONE
+          query: '{"name": "Joe Bloggs"}'
+          table: customers
+      - name: Commit DB Changes
+        run: echo ${{ steps.find-operation.outputs.result }}
