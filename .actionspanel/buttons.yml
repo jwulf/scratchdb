@@ -1,0 +1,8 @@
+buttons:
+  - title: Upsert record
+    action: "upsert"
+    description: Upsert record
+  - title: Find
+    action: "find"
+    description: Find Record
+ 
