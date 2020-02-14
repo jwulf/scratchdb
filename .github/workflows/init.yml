@@ -3,7 +3,7 @@ name: Init
 on: [repository_dispatch]
 
 jobs:
-  find:
+  init:
     if: github.event.action == 'init'
     runs-on: ubuntu-latest
 
