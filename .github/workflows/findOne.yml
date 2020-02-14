@@ -17,4 +17,4 @@ jobs:
           query: '{"name": "Joe Bloggs"}'
           table: customers
       - name: Commit DB Changes
-        run: echo ${{ steps.find-operation.outputs.result }}
+        run: echo ${{ steps.find-operation.outputs.result.record }}
