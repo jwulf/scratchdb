@@ -13,8 +13,7 @@ jobs:
         uses: jwulf/ghettohubDB@master
         with:
           operation: UPSERT
-          record:  |
-            '{"name": "Joe Bloggs", "address": "The Dog House"}'
+          record: '{"name": "Joe Bloggs", "address": "The Dog House"}'
           table: customers
       - name: Commit files
         run: |
