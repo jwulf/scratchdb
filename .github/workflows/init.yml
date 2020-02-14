@@ -1,0 +1,19 @@
+name: Init
+
+on: [repository_dispatch]
+
+jobs:
+  find:
+    if: github.event.action == 'init'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Init
+        id: init
+        uses: jwulf/ghettohubDB@master
+        with:
+          operation: INIT
+          
+      - name: Echo out record
+        run: echo ${{ steps.init.outputs.result }}
