@@ -14,6 +14,7 @@ jobs:
         uses: jwulf/ghettohubDB@master
         with:
           operation: INIT
+          tables: customers,orders,stock
           
       - name: Echo out record
         run: echo ${{ steps.init.outputs.result }}
